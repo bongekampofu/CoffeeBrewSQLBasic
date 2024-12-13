@@ -128,7 +128,10 @@ def login():
             customer = db.execute('SELECT * FROM customer WHERE username = ?', (username,)).fetchone()
             if customer and bcrypt.check_password_hash(customer['password'], password):
                 session['username'] = username
+                login_session['username'] = username
+                print(login_session['username'])
                 return redirect(url_for('welcome'))
+
             else:
                 flash("Invalid credentials. Please try again.")
     return render_template('login.html')
