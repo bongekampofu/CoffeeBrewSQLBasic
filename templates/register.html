@@ -1,0 +1,20 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <div class="firstHalf">
+        <form method="post">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required />
+
+            <label for="email">Email:</label>
+            <input type="text" name="email" required />
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" required /> <br>
+
+            <button type="submit">Register</button>
+        </form>
+        <br>
+        <a href="{{ url_for('login') }}">Already have an account? Login</a>
+    </div>
+{% endblock %}
